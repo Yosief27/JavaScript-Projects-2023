@@ -19,8 +19,8 @@ body{
     width:400px;
     overflow: hidden;
     border-radius: 10px;
-
 }
+.quiz-header{}
 button{
     width:100%;
     background-image: linear-gradient(to top, #954099 0%, #b977ad 100%);
@@ -31,8 +31,19 @@ button{
     padding:4px;
     border:none;
 }
-ul li{
+ul {
 list-style-type:none;
+padding:0;
+}
+h2{
+    margin:0;
+}
+ul li{
+    margin:1rem 0;
+}
+.quiz-header{
+    padding:2rem;
+
 }
 button:hover{
 
