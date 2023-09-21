@@ -49,7 +49,51 @@ const updateQuestion=()=>{
     
 }
 updateQuestion()
+
+let rightAnswer=0;
+function getChecked(){
+    const answers=document.querySelectorAll('input');
+    
+    let checkradio=false;
+    answers.forEach((answer)=>{
+      
+        if(answer.checked){
+            if(answer.id===data[counterQuestion].answer){
+                rightAnswer++;
+                answer.checked=false;
+                checkradio=true;
+ 
+            }
+            answer.checked=false;
+            checkradio=true;
+       }
+
+    }
+    
+    )
+    console.log(checkradio);
+    return checkradio;
+
+
+}
 submitBtn.addEventListener("click",()=>{
+   
+    if(!getChecked()){
+        alert(
+            'please choice an answer!'
+        )
+      return ;
+    }
+    if(!(counterQuestion+1<data.length)){
+         alert(`You get ${rightAnswer} right answers from ${data.length} questions`);
+       console.log(`${counterQuestion} and ${data.length}`);
+       counterQuestion=0;
+       updateQuestion();
+   return;
+
+    }
     counterQuestion++;
     updateQuestion()
+  
+
 })
